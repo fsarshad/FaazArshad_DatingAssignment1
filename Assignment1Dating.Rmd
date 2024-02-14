@@ -1,0 +1,677 @@
+---
+title: "Dating Visualization Assignment"
+author: "Faaz Arshad"
+date: "2024-02-11"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+
+## Package Installation 
+
+```{r setup, include=FALSE}
+install.packages("ggplot2")
+
+```
+
+
+
+
+```{r setup, include=FALSE}
+library(ggplot2)
+```
+
+## Introduction 
+
+## Task 
+
+#### 1. Dating trends over time
+
+```{r setup, include=FALSE}
+Dating <- HCMST_Couples
+```
+
+
+
+```{r setup, include=FALSE}
+
+head(Dating$meeting_type)
+head(Dating$Q21A_Year)
+```
+
+
+```{r setup, include=FALSE}
+class(Dating$meeting_type)
+```
+
+
+```{r setup, include=FALSE}
+class(Dating$Q21A_Year)
+```
+
+
+```{r setup, include=FALSE}
+Dating$Q21A_Year <- as.numeric(Dating$Q21A_Year)
+class(Dating$Q21A_Year)
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Military"), "meeting_type"] <- "Non-work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Public Place"), "meeting_type"] <- "Non-work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+
+```
+
+
+
+
+
+
+```{r}
+table(Dating$meeting_type)
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "On Vacation"), "meeting_type"] <- "Non-work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+
+```{r}
+table(Dating$meeting_type)
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Blind Date"), "meeting_type"] <- "Non-work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Volunteer Organization"), "meeting_type"] <- "Non-work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "One-time Service Interaction"), "meeting_type"] <- "Non-work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Church"), "meeting_type"] <- "Non-work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Customer-Client Relationship"), "meeting_type"] <- "Work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Business Trip"), "meeting_type"] <- "Work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Bar or Restaurant"), "meeting_type"] <- "Bar"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Work Neighbors"), "meeting_type"] <- "Neighbors"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "College"), "meeting_type"] <- "College"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Primary or Secondary School"), "meeting_type"] <- "Grade School"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Internet"), "meeting_type"] <- "Online"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Online Gaming"), "meeting_type"] <- "Online"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+```{r}
+Dating[which(Dating$meeting_type == "Met online"), "meeting_type"] <- "Online"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Internet Social Network"), "meeting_type"] <- "Online"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Internet Site"), "meeting_type"] <- "Online"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Internet Dating or Phone App"), "meeting_type"] <- "Online"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Internet Chat"), "meeting_type"] <- "Online"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Met Online"), "meeting_type"] <- "Online"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()
+```
+
+
+
+```{r}
+Dating[which(Dating$meeting_type == "Private Party"), "meeting_type"] <- "Non-work"
+ggplot(data = Dating, aes(x = Q21A_Year , y = meeting_type))+
+  geom_line()+
+  geom_point()+ 
+  labs(x="Year", y = "Meeting Type")
+```
+
+
+### Second Chart 
+### y is the number of time it happened in the month, frequency certain meeting type happened in a certain month. 
+
+
+```{r}
+library(ggplot2)
+```
+
+
+
+### Created table to know the count of meeting type per month
+```{r}
+table(Dating$meeting_type, Dating$Q21A_Month)
+```
+
+```{r}
+Frame <- data.frame(table(Dating$meeting_type, Dating$Q21A_Month)) 
+```
+
+
+```{r}
+
+ggplot(data = Frame, aes(x = Var2, y = Freq, fill = Var1))+
+  geom_bar(stat = "identity")+
+  labs(x="Month", y = "Count of Meeting Type per Month")+
+  labs(fill = "Meeting Type")
+  
+
+```
+
+
+
+
+```{r}
+class(Frame$Var1)
+class(Frame$Var2)
+class(Frame$Freq)
+```
+
+
+
+```{r}
+Frame$Var1 <- as.character(Frame$Var1)
+Frame$Var2 <-as.factor(Frame$Var2)
+Frame$Freq <- as.numeric(Frame$Freq)
+```
+
+
+
+```{r}
+Frame$Var2 <- factor(Frame$Var2, levels = c("January", "February","March","April","May","June", "July", "August", "September", "October", "November", "December"))
+```
+
+
+
+```{r}
+ggplot(data = Frame, aes(x = Var2, y = Freq, fill = Var1))+
+  geom_bar(stat = "identity")+
+  labs( x="Month", y = "Count of Meeting Type per Month")+ggtitle("Number of Meetings by Month and Meeting type")+
+  labs(fill = "Meeting Type")
+  
+```
+
+### Question: 
+
+#### Briefly discuss which visualization you recommend to your editor and why. Discuss three specific design choices in these graphs that were influenced by your knowledge of the data visualization principles we discussed in the lectures.
+
+### Answer:
+
+### I would recommend the second graph that contains the x axis as Month and the Count of Meeting Type per Month with Meeting Type as the different color gradiant in the graph. The reason is, the graph's x and y is properly labeled, there is a clear legend to follow when trying to understand the graph and colored appropriately. The data is also clear and distinct compared to the first graph. The first graph only had year and meeting type with not so good of a output. Even though it was a graph but having a graph made just to meet requirements is not always a good graph to share to your editor. As I learned in class so far, a graph should always have a meaning behind it and the meaning should be clear.  
+
+### The second graph is more descriptive. We can see the months in a whole calender year to understand the timeline and this allowed me to figured that people met in September. From a Student point of view this makes sense since that is the time when students from all ranges go back to school.I think the second graph [insert title name] is related to the Gestalt Principle because I organized individual elements into groups in column format for each month. I felt that the ready would not gain any insight if I targeted one element in the data for one month in the graph. The professor described it perfectly, An organized whole that is perceived as more than the sum of its parts. I also improved its simplicity with simple patterns that are regular, even, and orderly. For example, when I origionally outputed the code, the month was in a random order. That was very unpleasant in the eye for me since your brain is wired to think like Jan, Feb, Mar, etc. Not Jan, Dec, Jul, May and so on. My third design choice was similarity. For similarity I made sure to associated items in my graphs to have similar properties and a common structure. When using a grid layout, I  considered using color to "connect" the rows and made a legend for the reader to follow the colors.
+
+
+
+
+#### 2. Age is just a number
+####Create one (1) visualization to show the relationship between a respondent's age and their partner's age, accounting for the gender of the respondent? Identify the main pattern in the graph via an annotation directly added to the plot.
+####_Hint_: `ppage` is the survey respondent's age, `Q9` captures the partner's age, `ppgender` is the gender of the respondent. 
+
+
+```{r}
+Dating$ppage
+```
+
+
+
+```{r}
+head(Dating$ppage)
+```
+
+
+
+```{r}
+Dating$Q9
+head(Dating$Q9)
+```
+
+
+
+```{r}
+head(Dating$Q9)
+```
+
+
+```{r}
+Dating$ppgender
+```
+
+```{r}
+head(Dating$ppgender)
+```
+
+
+```{r}
+class(Dating$ppgender)
+class(Dating$ppage)
+class(Dating$Q9)
+```
+
+```{r}
+Dating$ppage <- as.numeric(Dating$ppage)
+Dating$Q9 <-as.numeric(Dating$Q9)
+```
+
+
+```{r}
+class(Dating$ppgender)
+class(Dating$ppage)
+class(Dating$Q9)
+```
+
+```{r}
+ggplot(data = Dating, aes(x = ppage, y = Q9, group = ppgender))+geom_line(aes(color = ppgender))+
+  labs(title = "Relationship Between a Respondent's Age and Their Partner's Age, By Gender", x = "Survey Respondent's Age", y = "Partner's Age")+
+  labs(col = "Respondent's Gender")
+```
+
+
+#### 3. Politics and Dating
+
+```{r}
+Dating$duration
+head(Dating$relate_duration_at_w6_years)
+
+```
+
+
+```{r}
+head(Dating$partyid7)
+```
+
+```{r}
+head(Dating$w6_q12)
+```
+
+
+
+```{r}
+class(Dating$partyid7)
+class(Dating$w6_q12)
+class(Dating$relate_duration_at_w6_years)
+```
+
+
+
+```{r}
+ggplot(data = Dating, aes(x = partyid7, y = relate_duration_at_w6_years, fill = w6_q12))+
+  geom_bar(stat = "identity")+
+  labs(x = "Survey Respondent Political Party", y = "Relationship Duration in Years at Wave 6", title = "How the Political Party of Partners is Associated with Length of Relationship")+
+  labs(fill = "Partner's Political Party")
+```
+
+
+
+
+
+```{r}
+head(Dating$relate_duration_at_w6_years)
+```
+####Second Graph 
+
+```{r}
+install.packages("ggridges")
+```
+
+
+```{r}
+library(ggridges)
+```
+
+
+
+
+```{r}
+ggplot(data = Dating, aes(x = relate_duration_at_w6_years, y = partyid7))+geom_density_ridges_gradient(aes(fill = partyid7))+
+ labs(y = "Survey Respondent Political Party", x = "Relationship Duration in Years at Wave 6", title = "Association between the Respondents Political Party and Duration of Relationship with Partner ")+
+  labs(fill = "Partner's Political Party")
+
+```
+### Discuss which visualization you recommend to your editor and why.
+
+## I recommend the editor to encorporate the first graph titled: "How the political party of partners is associated with the length of the relationship." The graph titled: "Associated between the Respondents POlitical Party and Duration" does not show an interesting output. Even though the data is properly represented. More meaning full data is presented through the first graph. For some reason the first graph has the y axis output as 2500,5000,7500,100000 when it is supposed to say 25,50,75,100. The first graph is cool because it clearly shows in 5th and 6th column that when the political party of the respondents matches the political party of their partner, then the relationship appears to last for longer periods of time. That is why the blue bar is substantially big on 5th column and purple bar is big on 6th column.  
+
+
+
+
+## #### 4. Your turn to choose
+```{r}
+Dating$ppeduc
+```
+
+
+
+
+
+```{r}
+head(Dating$ppeduc)
+```
+
+
+
+
+
+```{r}
+class(Dating$ppeduc)
+```
+
+
+
+```{r}
+head(Dating$partnership_status)
+```
+
+
+
+
+```{r}
+head(Dating$age_when_met)
+```
+
+
+```{r}
+class(Dating$partnership_status)
+```
+
+```{r}
+class(Dating$age_when_met)
+```
+
+
+
+```{r}
+Dating$age_when_met <- as.numeric(Dating$age_when_met)
+
+```
+
+
+
+
+```{r}
+class(Dating$age_when_met)
+```
+
+
+
+
+```{r}
+ggplot(data = Dating, aes(x = partnership_status, y = age_when_met))+geom_boxplot()+
+  labs(title = "How Partnership Status is Associated with Age when Partners Meet", x = "Partnership Status", y= "Age When Met")
+```
+
+
+### Second Graph 
+```{r}
+head(Dating$ppethm)
+class(Dating$ppethm)
+
+head(Dating$w6_relationship_quality)
+class(Dating$w6_relationship_quality)
+
+head(Dating$time_from_met_to_rel)
+class(Dating$time_from_met_to_rel)
+```
+
+
+
+```{r}
+class(Dating$ppeduc)
+```
+
+
+```{r}
+ggplot(x  )
+```
+
+
+```{r}
+class(Dating$ppage)
+head(Dating$ppage)
+
+class(Dating$w6_q9)
+head(Dating$w6_q9)
+```
+
+
+
+```{r}
+table(Dating$ppincimp, Dating$w6_relationship_quality)
+```
+
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+ggplot(data = Dating, aes(x = age_when_met, group = w6_relationship_quality, fill = w6_relationship_quality))+geom_density(adjust = 1.5, alpha = .5)+xlab("Age When Met")+ylab("Density")+facet_wrap(~w6_relationship_quality)+labs(fill = "Relationship Quality")+labs(title = "Association between Relationship Quality and Age that Partners Met")
+```
+
+### Briefly discuss which visualization you recommend to your editor, why you think this visualization is useful, and which patterns it serves to highlight.
+
+## Both graphs are good but I prefer to recommend the seocond graph that is titled: "Association between Relationship Quality and Age that Partners Met." The Facet presents more insight on the quality of the relationship to the age when they met. Each graph within the facet is colored differently to distinguish the type of quality. This adds an extra layer of clarity and indentity. The first graph is readable but is to boring and you never no how someone is familiar with a box plot. In the second graph you have an x range for each graph which gives you an idea of when they were happy or sad. 
+
+
+#### 5. Make two plots interactive
+
+
+```{r}
+install.packages("plotly")
+```
+
+
+
+
+```{r}
+library(plotly)
+```
+
+
+
+
+
+```{r}
+Box <- ggplot(data = Dating, aes(x = partnership_status, y = age_when_met))+geom_boxplot(color = "red", fill = "orange", alpha= 0.9)+
+  labs(title = "Interactive, The Association of Partnership Status with Age when Partners Meet", x = "Partnership Status", y= "Age When Met")
+ggplotly(Box)
+
+```
+
+
+# Second Chart 
+
+```{r}
+library(metricsgraphics)
+```
+
+```{r}
+library(metricsgraphics)
+```
+
+
+```{r}
+Dating%>%
+mjs_plot(x= ppage , y= Q9) %>% mjs_line()%>%
+mjs_labs(x="respondents age", y="partners age")
+```
+
+### Briefly describe to the editor why interactivity in these visualizations is particularly helpful for a reader.
+
+
+### I would recommend the first graph, box plot interactive chart. I used the previous box plot from the previous question to make interactive so that the user can see the numbers of median, q1, q3 etc. I then tried to color it resulting in getting orange. I tried to make different color of each box plot in the graph so that its easily differentiable. The second graph is not recommendable because, I was having trouble adding the third variable called ppgender in interactive format. 
+
+#### 6. Data Table
+
+```{r}
+install.packages("DT")
+```
+
+
+
+```{r}
+library(DT)
+```
+
+
+
+```{r}
+DataT = subset(Dating, select = c(ppage,ppgender, ppeduc,ppincimp,Q9,partyid7, meeting_type, ppethm, Q21A_Year, Q21A_Month, w6_identity, Q23, partnership_status, age_when_met,w6_relationship_quality, time_from_met_to_rel))
+
+```
+
+
+
+```{r}
+datatable(DataT, filter = "top", class = "compact", caption = "R represents respondent, P represent Partner." , colnames = c("R Age","R Gender","R Education","R Income","P Age","PartyAff","MeetingType","R Ethnicity","Year","Month","Identity","Q23","PartnerShipStatus","AgeWhenMet", "RelationshipQuality", "Time2Rel"))
+```
+
+### Suggest to the editor which kind of information you would like to provide in a data table and why.
+
+## Within my interactive Data Table I recommended to include demographic variables, like age, gender, ethnicity. Also, social factors like education, income, idententity, and political affiliation. I also included meeting types. These variables provide insight on the individuals who participation in this survey. It helps give the reader a broader view of who the surveyers were and helps them relate there incidents back to the reader who is interacting with the data table. 
